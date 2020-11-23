@@ -6,7 +6,7 @@ toptesi.sty, riga 20 --> per /subsubsection
 
 grazie a @poros per il suo fork https://github.com/poros/LaTeXi
 
-##Abstract
+## Abstract
 
 L’obiettivo della tesi è descrivere il modello SIEM e la cyber threat intelligence, al fine di dimostrarne l’efficacia dell’integrazione delle due discipline durante i processi di rilevamento e gestione delle minacce IT.
 La prima parte tratta da un punto di vista teorico il modello SIEM, introducendo le tecnologie e gli strumenti che lo definiscono, per comprenderne il funzionamento e il ruolo in termini di difesa e monitoraggio delle infrastrutture.
