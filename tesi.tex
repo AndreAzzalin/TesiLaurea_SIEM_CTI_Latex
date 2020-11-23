@@ -1,0 +1,259 @@
+%CLASSE DOCUMENTO - LINGUA E DIMENSIONE FONT
+\documentclass[corpo=11pt,numerazioneromana]{toptesi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INCLUSIONE PACCHETTI
+\usepackage[classica]{topfront}
+\usepackage[utf8]{inputenc} %utf8
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{blindtext}
+\usepackage{graphicx,wrapfig}
+\usepackage{booktabs}
+\usepackage{lmodern}
+\usepackage{varioref}
+\usepackage{url}
+\usepackage{array}
+\usepackage{paralist}{\obeyspaces\global\let =\space}
+\usepackage{verbatim}
+\usepackage{subfig}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage[pass]{geometry}
+\usepackage[figuresright]{rotating}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage[babel]{csquotes}
+\usepackage{hyperref}
+\usepackage[backend=biber,bibencoding=ascii]{biblatex}
+
+%pacage aggiunti
+\usepackage{varwidth}
+\usepackage{tasks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CONFIGURAZIONE LINK E RIFERIMENTI
+\hypersetup{%
+    pdfpagemode={UseOutlines},
+    bookmarksopen,
+    pdfstartview={FitH},
+    colorlinks,
+    linkcolor={black}, %COLORE DEI RIFERIMENTI AL TESTO
+    citecolor={blue}, %COLORE DEI RIFERIMENTI ALLE CITAZIONI
+    urlcolor={blue} %COLORI DEGLI URL
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CONFIGURAZIONE LISTATI/CODICE - CANCELLARE SE NON NECESSARIO
+% PYTHON - BIANCO E NERO
+\lstset{%
+	captionpos=b,
+	language=Python,
+	basicstyle =\small\ttfamily,
+	keywordstyle=\color{black}\bfseries,
+	breaklines=true,
+	breakatwhitespace=true,
+	frame=lines,
+	numbers=left,
+	numberstyle=\footnotesize,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% FRENCHSPACING VA _SEMPRE_ ABILITATO PER DOCUMENTI IN ITALIANO
+\frenchspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DEFINIZIONE SEZIONI IN NUMERAZIONE ROMANA
+%ELENCO DEI LISTATI/CODICI
+\makeatletter
+\newcommand\listofcodes{%
+ \iffrontmatter\else\frontmattertrue\fi
+ \if@openright\cleardoublepage\else\clearpage\fi
+ % change the meaning of \chapter in a group
+ \begingroup\def\chapter##1{\@schapter}
+ \phantomsection % for the hyperlink
+ \addcontentsline{toc}{chapter}{Elenco dei listati}
+ \lstlistoflistings
+ \endgroup
+} 
+\makeatother
+
+\addto\captionsitalian{%
+  \renewcommand{\lstlistlistingname}{Elenco dei listati}%
+  \renewcommand{\lstlistingname}{Listato}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INFORMAZIONI PDF - PERSONALIZZARE
+\pdfinfo{%
+  /Title    (Security information and event management )
+  /Author   (Andrea Azzalin)
+  /Subject  (Tesi Laurea Triennale in Informatica)
+  /Keywords (SIEM tesi Azzalin Andrea)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% LISTA DEI CAPITOLI DA INCLUDERE - PERSONALIZZARE
+\includeonly{%
+capitoli/1_modelloSIEM,
+capitoli/2_architettura,
+capitoli/3_CTI,
+capitoli/4_caso_di_studio,
+capitoli/5_conclusioni
+}
+
+% FILE DI BIBLIOGRAFIA
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INIZIO DOCUMENTO
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{titlepage}
+    \begin{center}
+        \huge
+        \textbf{Università degli Studi di Torino}
+        \Large
+        Dipartimento di Informatica\\
+        \Large
+        \vspace{0.5cm}
+        Corso di Laurea in Informatica\\
+        
+        \vspace{1cm}
+        \includegraphics[width=0.4\textwidth]{images/logo.jpg}
+        
+        \Large
+        \vspace{0.5cm}
+        Tesi di Laurea in Informatica
+         
+        \vspace{1cm}
+        \textbf{SECURITY INFORMATION AND EVENT MANAGEMENT\\}
+        \vspace{0.5cm}
+        Informazione e Conoscenza\\
+        
+        \vspace{1cm}
+        \textbf{Relatore:\\}
+        Prof. Matteo Sereno\\
+        
+        
+        \vspace{0.5cm}
+        \textbf{Candidato:\\}
+        Andrea Azzalin\\
+        
+        \large
+        \vspace{1.30cm}
+        \textbf{Sessione NOVEMBRE 2020\\}
+        a.a 2019/2020\\
+      
+
+
+    \end{center}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%INTERLINEA - DEFAULT 1 - NON ESAGERATE, NON SUPERATE MAI 1.3 ;)
+%\interlinea{1.2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+
+% DEDICA - PERSONALIZZARE
+% VSPACE - PROPORZIONE USATA PER CENTRATURA VERTICALE DEL TESTO
+% FLUSHRIGHT - ALLINEAMENTO ORIZZONTALE A DESTRA
+%\vspace*{\stretch{1}}
+%\begin{flushright}
+%\noindent
+%All'amato me stesso
+%\end{flushright}
+%\vspace*{\stretch{6}}
+%\cleardoublepage
+
+
+% CITAZIONE - PERSONALIZZARE
+% VSPACE - PROPORZIONE USATA PER CENTRATURA VERTICALE DEL TESTO
+% FLUSHRIGHT - ALLINEAMENTO ORIZZONTALE A DESTRA
+%\vspace*{\stretch{1}}
+%\begin{flushright}
+%\noindent
+%Citatemi dicendo che sono stato citato male.
+
+%\textit{Groucho Marx}
+%\end{flushright}
+%\vspace*{\stretch{6}}
+%\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% RINGRAZIAMENTI - PERSONALIZZARE
+%\ringraziamenti
+%hideit
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ABSTRACT - PERSONALIZZARE
+\abstract
+L’obiettivo della tesi è descrivere il modello SIEM e la cyber threat intelligence, al fine di dimostrarne l’efficacia dell’integrazione delle due discipline durante i processi di rilevamento e gestione delle minacce IT.\par
+La prima parte tratta da un punto di vista teorico il modello SIEM, introducendo le tecnologie e gli strumenti che lo definiscono, per comprenderne il funzionamento e il ruolo in termini di difesa e monitoraggio delle infrastrutture.\par
+La seconda parte tratta l’argomento della cyber threat intelligence, di come l’intelligence classica sia stata declinata per soddisfare le esigenze della sicurezza nello scenario cyber.\par
+Inoltre verrà descritta l'architettura di una soluzione di sicurezza sviluppata per un cliente durante il mio periodo di stage presso l'azienda Nais, nel quale sono stati utilizzati solamente strumenti opensource, nello specifico: AlienVault Open Source Security Information Manager (OSSIM), Graylog e Malware Information Sharing Platform (MISP). Infine per dimostrare l’obiettivo della tesi, verranno proposte due analisi di tentativi di attacco e di come gli strumenti della soluzione hanno collaborato per l’identificazione e la mitigazione delle attività malevole.\par
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INDICI - ELIMINARE GLI INDICI NON NECESSARI
+
+% INDICE GENERALE
+\tableofcontents
+
+% INDICE DELLE FIGURE
+\listoffigures
+
+% INDICE DELLE TABELLE
+%\listoftables
+
+% INDICE DEI CODICI
+%\listofcodes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+% INCLUSIONE FILE CAPITOLI - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
+\include{capitoli/1_modelloSIEM}
+\include{capitoli/2_architettura}
+\include{capitoli/3_CTI}
+\include{capitoli/4_caso_di_studio}
+\include{capitoli/5_conclusioni}
+% INCLUSIONE APPENDICI - - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% BIBLIOGRAFIA
+\phantomsection
+\addcontentsline{toc}{chapter}{\refname}
+\nocite{*}
+\printbibliography
+\end{document}
