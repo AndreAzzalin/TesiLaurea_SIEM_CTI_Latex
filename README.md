@@ -1,8 +1,10 @@
-# TesiLaurea_Latex
+# Tesi di Laurea: Modello SIEM e integrazione con Cyber Threat Intelligence
 
 modifiche:
 
-toptesi.sty, riga 20 --> per /subsubsection
+add /subsubsection
+
+https://github.com/AndreAzzalin/TesiLaurea_SIEM_CTI_Latex/blob/2d7114da3e6ba722e04c50aff912deefa3a3d140/tex/toptesi.sty#L20
 
 grazie a @poros per il suo fork https://github.com/poros/LaTeXi
 
